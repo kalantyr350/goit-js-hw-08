@@ -13,6 +13,7 @@ updatedTime();
 
 function updatedTime() {
   const savedTime = localStorage.getItem('videoplayer-current-time');
-
-  player.setCurrentTime(savedTime);
+  if (localStorage.length !== 0) {
+    player.setCurrentTime(savedTime);
+  }
 }
