@@ -21,6 +21,7 @@ function addLocalStorage(e) {
 }
 
 const dataObject = localStorage.getItem('feedback-form-state');
+console.log(dataObject);
 function insetWithLS(object) {
   if (object && emailInput.name === 'email') {
     emailInput.value = JSON.parse(object).email;
@@ -35,6 +36,9 @@ function submitForm(e) {
   e.preventDefault();
   e.target.reset();
   localStorage.removeItem('feedback-form-state');
+  console.log(inputValue);
+  inputValue.email = '';
+  inputValue.message = '';
   formRef.elements.email.value = '';
   formRef.elements.message.value = '';
 }
