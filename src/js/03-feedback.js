@@ -21,14 +21,17 @@ function addLocalStorage(e) {
 }
 
 const dataObject = localStorage.getItem('feedback-form-state');
-console.log(dataObject);
+
 function insetWithLS(object) {
   if (object && emailInput.name === 'email') {
+    inputValue.email = JSON.parse(object).email;
     emailInput.value = JSON.parse(object).email;
   }
   if (object && messageInput.name === 'message') {
+    inputValue.message = JSON.parse(object).message;
     messageInput.textContent = JSON.parse(object).message;
   }
+  console.log(inputValue);
 }
 insetWithLS(dataObject);
 
